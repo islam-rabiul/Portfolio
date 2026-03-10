@@ -1,0 +1,4 @@
+
+https://github.com/islam-rabiul/OpenCV-project
+https://github.com/islam-rabiul/Machine-Learning-Projects/blob/main/Lung_cancer_prediction_ipynb.ipynb
+https://github.com/islam-rabiul/Password-Validator
