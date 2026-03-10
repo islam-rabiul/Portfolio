@@ -72,6 +72,7 @@ const App: React.FC = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-6">
               <a href="#home" className="hover:text-blue-400 transition-colors">Home</a>
+              <a href="#about" className="hover:text-blue-400 transition-colors">About</a>
               <a href="#projects" className="hover:text-blue-400 transition-colors">Projects</a>
               <a href="#skills" className="hover:text-blue-400 transition-colors">Skills</a>
               <a href="#certificates" className="hover:text-blue-400 transition-colors">Certificates</a>
@@ -99,6 +100,7 @@ const App: React.FC = () => {
             >
               <div className="flex flex-col space-y-3">
                 <a href="#home" className="hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Home</a>
+                <a href="#about" className="hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(false)}>About</a>
                 <a href="#projects" className="hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Projects</a>
                 <a href="#skills" className="hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Skills</a>
                 <a href="#certificates" className="hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Certificates</a>
@@ -119,7 +121,7 @@ const App: React.FC = () => {
         >
           <div className="mb-8">
             <img 
-              src="/assets/mainphoto.jpg" 
+              src="/assets/Profileicon.jpeg" 
               alt="Profile" 
               className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full mx-auto border-4 border-blue-500 shadow-xl"
             />
@@ -155,7 +157,7 @@ const App: React.FC = () => {
               <Github className="w-6 h-6" />
             </a>
             <a 
-              href="https://linkedin.com/in/islam-rabiul" 
+              href="https://www.linkedin.com/in/mohammad-rabiul-islam/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors"
@@ -170,6 +172,101 @@ const App: React.FC = () => {
             </a>
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 px-4 bg-gray-800/50">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-4xl font-bold text-center mb-16 gradient-text"
+          >
+            About Me
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-2xl font-bold mb-4 text-blue-400">Full Stack Developer & ML Enthusiast</h3>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                I'm Rabiul Islam, a passionate developer with expertise in full-stack web development and machine learning. 
+                I love creating innovative solutions that bridge the gap between cutting-edge technology and real-world applications.
+              </p>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                My journey in tech started with a curiosity about how things work, and has evolved into a career focused on 
+                building scalable web applications and exploring the fascinating world of artificial intelligence.
+              </p>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
+                or sharing knowledge with the developer community. I believe in continuous learning and staying updated with 
+                the latest industry trends.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="px-4 py-2 bg-blue-600/20 text-blue-400 rounded-full text-sm font-medium">
+                  Problem Solver
+                </span>
+                <span className="px-4 py-2 bg-green-600/20 text-green-400 rounded-full text-sm font-medium">
+                  Team Player
+                </span>
+                <span className="px-4 py-2 bg-purple-600/20 text-purple-400 rounded-full text-sm font-medium">
+                  Quick Learner
+                </span>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
+              <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
+                <h4 className="text-xl font-semibold mb-4 text-blue-400">Education</h4>
+                <div className="space-y-3">
+                  <div>
+                    <h5 className="font-medium text-white">Bachelor of Technology</h5>
+                    <p className="text-gray-400 text-sm">Computer Science & Engineering</p>
+                    <p className="text-gray-500 text-xs">2022 - 2026</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
+                <h4 className="text-xl font-semibold mb-4 text-blue-400">Interests</h4>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <span className="text-gray-300 text-sm">Machine Learning</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <span className="text-gray-300 text-sm">Web Development</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                    <span className="text-gray-300 text-sm">.Net</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                    <span className="text-gray-300 text-sm">Dsa</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
+                <h4 className="text-xl font-semibold mb-4 text-blue-400">Languages</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-gray-800 rounded-full text-sm">English</span>
+                  <span className="px-3 py-1 bg-gray-800 rounded-full text-sm">Hindi</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* Projects Section */}
@@ -271,12 +368,24 @@ const App: React.FC = () => {
                 transition={{ delay: index * 0.1 }}
                 className="bg-gray-800 rounded-xl overflow-hidden card-hover border border-gray-700"
               >
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={certificate.image}
-                    alt={certificate.title}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="h-48 overflow-hidden cursor-pointer group relative">
+                  <a 
+                    href={certificate.image}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full h-full"
+                  >
+                    <img 
+                      src={certificate.image}
+                      alt={certificate.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <ExternalLink className="w-8 h-8 text-white" />
+                      </div>
+                    </div>
+                  </a>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{certificate.title}</h3>
