@@ -19,12 +19,12 @@ const ROLES = [
 ];
 
 const skills: { category: string; icon: React.ReactNode; color: string; items: string[] }[] = [
-  { category: 'Languages',        icon: <Terminal className="w-5 h-5" />, color: 'from-violet-500 to-indigo-500',  items: ['C', 'C++', 'Python'] },
-  { category: 'Web & Frameworks', icon: <Globe    className="w-5 h-5" />, color: 'from-cyan-500 to-blue-500',     items: ['React.js', 'Node.js', 'Express.js'] },
-  { category: 'Databases',        icon: <Database className="w-5 h-5" />, color: 'from-emerald-500 to-teal-500', items: ['MongoDB', 'MySQL'] },
-  { category: 'AI & Automation',  icon: <Brain    className="w-5 h-5" />, color: 'from-pink-500 to-rose-500',    items: ['n8n', 'Gemini API', 'AI Agents', 'Machine Learning'] },
-  { category: 'Concepts',         icon: <Cpu      className="w-5 h-5" />, color: 'from-amber-500 to-orange-500', items: ['OOP', 'REST APIs', 'ML Algorithms', 'DSA'] },
-  { category: 'Tools',            icon: <Wrench   className="w-5 h-5" />, color: 'from-slate-500 to-gray-400',   items: ['Postman', 'GitHub', 'Git'] },
+  { category: 'Languages',        icon: <Terminal className="w-5 h-5" />, color: 'from-green-500 to-emerald-600',  items: ['C', 'C++', 'Python'] },
+  { category: 'Web & Frameworks', icon: <Globe    className="w-5 h-5" />, color: 'from-teal-500 to-green-600',     items: ['React.js', 'Node.js', 'Express.js'] },
+  { category: 'Databases',        icon: <Database className="w-5 h-5" />, color: 'from-emerald-500 to-teal-600',  items: ['MongoDB', 'MySQL'] },
+  { category: 'AI & Automation',  icon: <Brain    className="w-5 h-5" />, color: 'from-green-400 to-emerald-500', items: ['n8n', 'Gemini API', 'AI Agents', 'Machine Learning'] },
+  { category: 'Concepts',         icon: <Cpu      className="w-5 h-5" />, color: 'from-teal-400 to-green-500',    items: ['OOP', 'REST APIs', 'ML Algorithms', 'DSA'] },
+  { category: 'Tools',            icon: <Wrench   className="w-5 h-5" />, color: 'from-emerald-600 to-green-700', items: ['Postman', 'GitHub', 'Git'] },
 ];
 
 const projects = [
@@ -34,7 +34,7 @@ const projects = [
     tech: ['n8n', 'Gemini AI', 'Node.js', 'MongoDB', 'REST APIs'],
     github: 'https://github.com/islam-rabiul',
     icon: <Brain className="w-6 h-6" />,
-    color: 'from-violet-600 to-indigo-600',
+    color: 'from-green-600 to-emerald-700',
     highlights: ['Gemini AI sentiment analysis', 'Auto-routing workflow', 'Structured feedback DB', 'Webhook integration'],
     image: '/assets/ai_agent_project.png',
     type: 'AI / Automation',
@@ -45,7 +45,7 @@ const projects = [
     tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Razorpay', 'JWT'],
     github: 'https://github.com/islam-rabiul',
     icon: <Globe className="w-6 h-6" />,
-    color: 'from-cyan-600 to-blue-600',
+    color: 'from-teal-600 to-green-700',
     highlights: ['RBAC with JWT', 'Razorpay payment gateway', 'Full CRUD operations', 'Deployed on Vercel'],
     image: '/assets/ecommerce_project.png',
     type: 'Full Stack',
@@ -56,7 +56,7 @@ const projects = [
     tech: ['Python', 'Scikit-learn', 'Random Forest', 'NumPy', 'Pandas'],
     github: 'https://github.com/islam-rabiul/Machine-Learning-Projects',
     icon: <Cpu className="w-6 h-6" />,
-    color: 'from-pink-600 to-rose-600',
+    color: 'from-emerald-600 to-green-800',
     highlights: ['97% accuracy', 'Random Forest classifier', 'PCA dimensionality reduction', 'Feature scaling'],
     image: '/assets/lungcancer.jpg',
     type: 'Machine Learning',
@@ -192,7 +192,7 @@ const Loader: React.FC<{ onDone: () => void }> = ({ onDone }) => {
 
   useEffect(() => {
     const boot = [
-      { text: '> INITIALIZING  RABIUL.PORTFOLIO  v2.0 ...' },
+      { text: '> INITIALIZING  RABIUL.PORTFOLIO  v3.0 ...' },
       { text: '> LOADING AI & ML ENGINE ............... [OK]' },
       { text: '> LOADING FULLSTACK MODULES ............ [OK]' },
       { text: '> ESTABLISHING GITHUB CONNECTION ....... [OK]' },
@@ -391,7 +391,7 @@ const TerminalWindow: React.FC = () => {
             <span className="t-colon">:</span>
             <span className="t-tilde">~</span>
             <span className="t-dollar" style={{ marginLeft: 4 }}>$ </span>
-            <span style={{ color: '#fde68a' }}>{line.text}</span>
+            <span style={{ color: '#4ade80' }}>{line.text}</span>
           </div>
         );
       case 'out':
@@ -405,7 +405,7 @@ const TerminalWindow: React.FC = () => {
         );
       case 'status':
         return (
-          <div key={i} className="t-output" style={{ color: '#4ade80', fontWeight: 700, marginTop: 4 }}>
+          <div key={i} className="t-output" style={{ color: '#22C55E', fontWeight: 700, marginTop: 4 }}>
             {line.text}
           </div>
         );
@@ -422,7 +422,7 @@ const TerminalWindow: React.FC = () => {
       </div>
       <div className="terminal-body">
         {TERM_LINES.slice(0, visible).map((line, i) => renderLine(line, i))}
-        <span className="cursor-blink" style={{ color: '#f4c430', fontSize: '0.85rem' }}>█</span>
+        <span className="cursor-blink" style={{ color: '#22C55E', fontSize: '0.85rem' }}>█</span>
       </div>
     </div>
   );
@@ -478,7 +478,7 @@ const ProjectModal: React.FC<{
           <div className="absolute inset-0 modal-backdrop" />
           <motion.div
             className="relative glass-card max-w-lg w-full overflow-hidden z-10"
-            style={{ boxShadow: '0 25px 80px rgba(0,0,0,0.6)' }}
+            style={{ boxShadow: '0 25px 80px rgba(0,0,0,0.8), 0 0 60px rgba(34,197,94,0.1)' }}
             initial={{ scale: 0.85, opacity: 0, y: 30 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.85, opacity: 0, y: 30 }}
@@ -490,7 +490,7 @@ const ProjectModal: React.FC<{
                 onClick={onClose}
                 className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/30 flex items-center justify-center hover:bg-black/50 transition-colors"
               >
-                <X className="w-4 h-4 force-white" style={{ color: 'white' }} />
+                <X className="w-4 h-4" style={{ color: 'white' }} />
               </button>
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center" style={{ color: 'white' }}>
@@ -503,17 +503,17 @@ const ProjectModal: React.FC<{
               <h3 className="text-xl font-bold mt-1" style={{ color: 'white' }}>{project.title}</h3>
             </div>
             <div className="p-6 space-y-5">
-              <p className="text-slate-300 leading-relaxed">{project.description}</p>
+              <p style={{ color: '#94A3B8' }} className="leading-relaxed">{project.description}</p>
               <div>
-                <h4 className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#92650a' }}>
+                <h4 className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#22C55E' }}>
                   Key Highlights
                 </h4>
                 <ul className="space-y-2">
                   {project.highlights.map((h, i) => (
-                    <li key={i} className="flex items-center gap-3 text-slate-300 text-sm">
+                    <li key={i} className="flex items-center gap-3 text-sm" style={{ color: '#94A3B8' }}>
                       <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
-                        style={{ background: 'rgba(180,132,11,0.1)', border: '1px solid rgba(180,132,11,0.32)' }}>
-                        <Zap className="w-3 h-3" style={{ color: '#92650a' }} />
+                        style={{ background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.3)' }}>
+                        <Zap className="w-3 h-3" style={{ color: '#22C55E' }} />
                       </span>
                       {h}
                     </li>
@@ -521,7 +521,7 @@ const ProjectModal: React.FC<{
                 </ul>
               </div>
               <div>
-                <h4 className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#92650a' }}>
+                <h4 className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#22C55E' }}>
                   Tech Stack
                 </h4>
                 <div className="flex flex-wrap gap-2">
@@ -588,8 +588,8 @@ const CertModal: React.FC<{
               </div>
               <div className="p-5 flex items-center justify-between">
                 <div>
-                  <p className="font-semibold text-white">{cert.title}</p>
-                  <p className="text-slate-400 text-sm">{cert.issuer} · {cert.date}</p>
+                  <p className="font-semibold" style={{ color: '#ffffff' }}>{cert.title}</p>
+                  <p className="text-sm" style={{ color: '#64748B' }}>{cert.issuer} · {cert.date}</p>
                 </div>
                 <a href={cert.image} target="_blank" rel="noopener noreferrer" className="social-icon">
                   <ExternalLink className="w-4 h-4" />
@@ -657,16 +657,16 @@ const App: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          style={{ background: 'var(--color-bg)', color: '#111827' }}
-          className="min-h-screen light-mode"
+          style={{ background: '#080A09', color: '#FFFFFF' }}
+          className="min-h-screen"
         >
           {/* Scroll progress bar */}
           <motion.div
             className="fixed top-0 left-0 right-0 h-[3px] z-[200] origin-left"
             style={{
               scaleX,
-              background: 'linear-gradient(90deg, #f4c430, #e8a020, #7c3aed, #0dddd4)',
-              boxShadow: '0 0 12px rgba(244,196,48,0.7)',
+              background: 'linear-gradient(90deg, #22C55E, #34D399, #16A34A, #22C55E)',
+              boxShadow: '0 0 12px rgba(34,197,94,0.7)',
             }}
           />
 
@@ -681,13 +681,20 @@ const App: React.FC = () => {
           >
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between items-center h-16">
-                {/* Logo */}
-                <motion.div
+                {/* Logo — Codespot terminal-box style */}
+                <motion.a
+                  href="#home"
                   whileHover={{ scale: 1.06 }}
-                  className="text-xl font-bold font-['Space_Grotesk'] gradient-text tracking-tight select-none"
+                  className="flex items-center gap-2.5 select-none"
                 >
-                  RI.
-                </motion.div>
+                  <div className="logo-box">&gt;_</div>
+                  <span
+                    className="text-xl font-bold font-['Space_Grotesk'] tracking-tight"
+                    style={{ color: '#FFFFFF' }}
+                  >
+                    RI<span style={{ color: '#22C55E' }}>.</span>
+                  </span>
+                </motion.a>
 
                 {/* Desktop links */}
                 <div className="hidden md:flex items-center space-x-6">
@@ -695,7 +702,7 @@ const App: React.FC = () => {
                     <a
                       key={link.href}
                       href={link.href}
-                      className={`nav-link ${activeSection === link.href.slice(1) ? '!text-amber-700' : ''}`}
+                      className={`nav-link ${activeSection === link.href.slice(1) ? '!text-green-400' : ''}`}
                     >
                       {link.label}
                     </a>
@@ -732,7 +739,8 @@ const App: React.FC = () => {
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="md:hidden overflow-hidden nav-glass border-t border-yellow-400/10"
+                  className="md:hidden overflow-hidden nav-glass border-t"
+                  style={{ borderColor: 'rgba(34,197,94,0.1)' }}
                 >
                   <div className="px-4 py-4 flex flex-col gap-3">
                     {navLinks.map(link => (
@@ -771,18 +779,20 @@ const App: React.FC = () => {
           >
             {/* Background elements */}
             <div className="star-bg" />
-            <div className="orb w-[600px] h-[600px] -top-32 -left-64"
-              style={{ background: 'rgba(196,144,16,0.12)', animationDelay: '0s' }} />
-            <div className="orb w-[700px] h-[700px] -bottom-20 -right-80"
-              style={{ background: 'rgba(109,40,217,0.08)', animationDelay: '4s' }} />
-            <div className="orb w-72 h-72 top-1/2 left-1/3"
-              style={{ background: 'rgba(8,145,178,0.07)', animationDelay: '2s' }} />
 
-            {/* Subtle gold grid */}
+            {/* Green orbs */}
+            <div className="orb w-[600px] h-[600px] -top-32 -left-64"
+              style={{ background: 'rgba(34,197,94,0.08)', animationDelay: '0s' }} />
+            <div className="orb w-[700px] h-[700px] -bottom-20 -right-80"
+              style={{ background: 'rgba(34,197,94,0.06)', animationDelay: '4s' }} />
+            <div className="orb w-72 h-72 top-1/2 left-1/3"
+              style={{ background: 'rgba(52,211,153,0.05)', animationDelay: '2s' }} />
+
+            {/* Subtle green grid */}
             <div
-              className="absolute inset-0 opacity-[0.035] pointer-events-none"
+              className="absolute inset-0 opacity-[0.025] pointer-events-none"
               style={{
-                backgroundImage: 'linear-gradient(rgba(180,132,11,1) 1px, transparent 1px), linear-gradient(90deg, rgba(180,132,11,1) 1px, transparent 1px)',
+                backgroundImage: 'linear-gradient(rgba(34,197,94,1) 1px, transparent 1px), linear-gradient(90deg, rgba(34,197,94,1) 1px, transparent 1px)',
                 backgroundSize: '68px 68px',
               }}
             />
@@ -816,10 +826,10 @@ const App: React.FC = () => {
 
                 {/* Typewriter role */}
                 <motion.div variants={fadeUp} custom={2}>
-                  <p className="text-xl sm:text-2xl text-slate-300 font-medium h-9 flex items-center gap-1">
-                    <span style={{ color: '#f4c430', fontSize: '1.1em', opacity: 0.9 }}>{'>'}</span>
+                  <p className="text-xl sm:text-2xl font-medium h-9 flex items-center gap-1" style={{ color: '#94A3B8' }}>
+                    <span style={{ color: '#22C55E', fontSize: '1.1em', opacity: 0.9 }}>{'>'}</span>
                     <span className="ml-1">{role}</span>
-                    <span className="cursor-blink ml-0.5" style={{ color: '#f4c430' }}>|</span>
+                    <span className="cursor-blink ml-0.5" style={{ color: '#22C55E' }}>|</span>
                   </p>
                 </motion.div>
 
@@ -827,11 +837,11 @@ const App: React.FC = () => {
                 <motion.p
                   variants={fadeUp}
                   custom={3}
-                  className="text-slate-400 text-base sm:text-lg leading-relaxed max-w-lg"
-                  style={{ lineHeight: '1.8' }}
+                  className="text-base sm:text-lg leading-relaxed max-w-lg"
+                  style={{ color: '#64748B', lineHeight: '1.8' }}
                 >
                   Building intelligent systems and beautiful web experiences —{' '}
-                  <span style={{ color: '#7a5200', fontWeight: 600 }}>from AI agents to full-stack applications.</span>
+                  <span style={{ color: '#22C55E', fontWeight: 600 }}>from AI agents to full-stack applications.</span>
                 </motion.p>
 
                 {/* CTA buttons */}
@@ -887,35 +897,43 @@ const App: React.FC = () => {
 
                   {/* Floating skill chips */}
                   <div className="float-chip float-chip-1" style={{ top: '6%', right: '-16px' }}>
-                    <Brain className="w-3.5 h-3.5" style={{ color: '#b8860b' }} />
-                    AI &amp; ML
+                    <Brain className="w-3.5 h-3.5" style={{ color: '#22C55E' }} />
+                    AI & ML
                   </div>
                   <div className="float-chip float-chip-2" style={{ top: '42%', left: '-38px' }}>
-                    <Globe className="w-3.5 h-3.5" style={{ color: '#0891b2' }} />
+                    <Globe className="w-3.5 h-3.5" style={{ color: '#34D399' }} />
                     Full Stack
                   </div>
                   <div className="float-chip float-chip-3" style={{ bottom: '24%', right: '-28px' }}>
-                    <Terminal className="w-3.5 h-3.5" style={{ color: '#7c3aed' }} />
+                    <Terminal className="w-3.5 h-3.5" style={{ color: '#4ade80' }} />
                     Python
                   </div>
                   <div className="float-chip float-chip-4" style={{ bottom: '4%', left: '-8px' }}>
-                    <Zap className="w-3.5 h-3.5" style={{ color: '#b8860b' }} />
+                    <Zap className="w-3.5 h-3.5" style={{ color: '#22C55E' }} />
                     97% ML Accuracy
                   </div>
 
                   {/* Decorative orbit rings */}
                   <div
-                    className="orbit-ring border border-yellow-400/10"
-                    style={{ width: '290px', height: '290px', animation: 'floatOrb 14s ease-in-out infinite' }}
+                    className="orbit-ring"
+                    style={{
+                      width: '290px', height: '290px',
+                      border: '1px solid rgba(34,197,94,0.12)',
+                      animation: 'floatOrb 14s ease-in-out infinite'
+                    }}
                   />
                   <div
-                    className="orbit-ring border border-violet-600/20"
-                    style={{ width: '356px', height: '356px', animation: 'floatOrb 18s ease-in-out infinite reverse' }}
+                    className="orbit-ring"
+                    style={{
+                      width: '356px', height: '356px',
+                      border: '1px solid rgba(34,197,94,0.07)',
+                      animation: 'floatOrb 18s ease-in-out infinite reverse'
+                    }}
                   />
 
                   {/* Profile photo */}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <div className="profile-ring-light float-anim" style={{ padding: '3px' }}>
+                    <div className="profile-ring-light float-anim" style={{ padding: '3px', borderRadius: '50%' }}>
                       <div className="rounded-full overflow-hidden w-52 h-52">
                         <img
                           src="/assets/rabiprofile.jpeg"
@@ -931,7 +949,8 @@ const App: React.FC = () => {
 
             {/* Scroll indicator */}
             <motion.div
-              className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-500 text-xs"
+              className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-xs"
+              style={{ color: '#64748B' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.6, duration: 0.8 }}
@@ -969,6 +988,9 @@ const App: React.FC = () => {
             </div>
           </section>
 
+          {/* Section divider */}
+          <div className="section-divider" />
+
           {/* ═══════════════════════════════════════════════════════════════════
               ABOUT — TERMINAL + EDUCATION
           ══════════════════════════════════════════════════════════════════════ */}
@@ -994,7 +1016,7 @@ const App: React.FC = () => {
                 viewport={{ once: true, margin: '-60px' }}
                 className="space-y-4"
               >
-                <h3 className="text-sm font-semibold uppercase tracking-widest mb-6" style={{ color: '#92650a' }}>
+                <h3 className="text-sm font-semibold uppercase tracking-widest mb-6" style={{ color: '#22C55E' }}>
                   Education
                 </h3>
                 {education.map((edu, i) => (
@@ -1002,25 +1024,25 @@ const App: React.FC = () => {
                     <div className="flex flex-col items-center">
                       <div
                         className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                        style={{ background: 'rgba(244,196,48,0.1)', border: '1px solid rgba(244,196,48,0.2)', color: '#f4c430' }}
+                        style={{ background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.22)', color: '#22C55E' }}
                       >
                         {edu.icon}
                       </div>
                       {i < education.length - 1 && (
                         <div
                           className="w-px flex-1 mt-3"
-                          style={{ background: 'linear-gradient(to bottom, rgba(244,196,48,0.3), transparent)' }}
+                          style={{ background: 'linear-gradient(to bottom, rgba(34,197,94,0.3), transparent)' }}
                         />
                       )}
                     </div>
                     <div className="pb-2">
-                      <h4 className="font-bold text-white leading-snug mb-1">{edu.degree}</h4>
-                      <p className="text-slate-400 text-sm mb-2">{edu.institution}</p>
+                      <h4 className="font-bold leading-snug mb-1" style={{ color: '#ffffff' }}>{edu.degree}</h4>
+                      <p className="text-sm mb-2" style={{ color: '#64748B' }}>{edu.institution}</p>
                       <div className="flex gap-3 text-xs">
-                        <span className="px-2 py-1 rounded-md text-slate-300" style={{ background: 'rgba(255,255,255,0.07)' }}>
+                        <span className="px-2 py-1 rounded-md" style={{ background: 'rgba(255,255,255,0.05)', color: '#94A3B8' }}>
                           {edu.duration}
                         </span>
-                        <span className="px-2 py-1 rounded-md font-semibold" style={{ background: 'rgba(244,196,48,0.15)', color: '#f4c430' }}>
+                        <span className="px-2 py-1 rounded-md font-semibold" style={{ background: 'rgba(34,197,94,0.15)', color: '#22C55E' }}>
                           {edu.score}
                         </span>
                       </div>
@@ -1030,7 +1052,7 @@ const App: React.FC = () => {
 
                 {/* Languages */}
                 <motion.div variants={fadeUp} custom={3} className="glass-card p-6">
-                  <h4 className="font-semibold text-sm uppercase tracking-widest mb-4" style={{ color: '#92650a' }}>
+                  <h4 className="font-semibold text-sm uppercase tracking-widest mb-4" style={{ color: '#22C55E' }}>
                     Languages
                   </h4>
                   <div className="flex gap-3">
@@ -1043,12 +1065,15 @@ const App: React.FC = () => {
             </div>
           </Section>
 
+          {/* Section divider */}
+          <div className="section-divider" />
+
           {/* ═══════════════════════════════════════════════════════════════════
               PROJECTS — 3D TILT CARDS
           ══════════════════════════════════════════════════════════════════════ */}
           <Section
             id="projects"
-            style={{ background: 'linear-gradient(180deg, rgba(243,240,234,0) 0%, rgba(243,240,234,0.7) 100%)' }}
+            style={{ background: 'linear-gradient(180deg, rgba(8,10,9,0) 0%, rgba(13,15,14,0.8) 100%)' }}
           >
             <SectionTitle>Projects</SectionTitle>
             <motion.div
@@ -1071,7 +1096,7 @@ const App: React.FC = () => {
                       />
                       <div className="absolute inset-0 project-overlay" />
                       <div className="absolute top-3 left-3">
-                        <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-black/60 backdrop-blur border border-white/10 force-white" style={{ color: 'white' }}>
+                        <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-black/60 backdrop-blur border border-white/10" style={{ color: 'white' }}>
                           {project.type}
                         </span>
                       </div>
@@ -1087,13 +1112,13 @@ const App: React.FC = () => {
                       <div className="flex items-center gap-2.5 mb-3">
                         <div
                           className={`w-8 h-8 rounded-lg bg-gradient-to-br ${project.color} flex items-center justify-center text-white`}
-                          style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.4)' }}
+                          style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.5)' }}
                         >
                           {project.icon}
                         </div>
-                        <h3 className="text-base font-bold leading-snug" style={{ color: '#111827' }}>{project.title}</h3>
+                        <h3 className="text-base font-bold leading-snug" style={{ color: '#ffffff' }}>{project.title}</h3>
                       </div>
-                      <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2">
+                      <p className="text-sm leading-relaxed mb-4 line-clamp-2" style={{ color: '#64748B' }}>
                         {project.description}
                       </p>
                       <div className="flex flex-wrap gap-1.5 mb-4">
@@ -1104,7 +1129,7 @@ const App: React.FC = () => {
                           <span className="skill-badge text-xs px-2 py-1">+{project.tech.length - 4}</span>
                         )}
                       </div>
-                      <div className="text-sm font-semibold flex items-center gap-1.5 transition-colors" style={{ color: '#92650a' }}>
+                      <div className="text-sm font-semibold flex items-center gap-1.5 transition-colors" style={{ color: '#22C55E' }}>
                         View Details
                         <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                       </div>
@@ -1115,12 +1140,15 @@ const App: React.FC = () => {
             </motion.div>
           </Section>
 
+          {/* Section divider */}
+          <div className="section-divider" />
+
           {/* ═══════════════════════════════════════════════════════════════════
               SKILLS
           ══════════════════════════════════════════════════════════════════════ */}
           <Section
             id="skills"
-            style={{ background: 'linear-gradient(180deg, rgba(243,240,234,0.7) 0%, rgba(243,240,234,0) 100%)' }}
+            style={{ background: 'linear-gradient(180deg, rgba(13,15,14,0.8) 0%, rgba(8,10,9,0) 100%)' }}
           >
             <SectionTitle>Skills</SectionTitle>
             <motion.div
@@ -1135,11 +1163,11 @@ const App: React.FC = () => {
                   <div className="flex items-center gap-3 mb-4">
                     <div
                       className={`w-9 h-9 rounded-lg bg-gradient-to-br ${group.color} flex items-center justify-center text-white`}
-                      style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.4)' }}
+                      style={{ boxShadow: '0 4px 16px rgba(34,197,94,0.25)' }}
                     >
                       {group.icon}
                     </div>
-                    <h3 className="font-bold text-sm tracking-wide" style={{ color: '#111827' }}>{group.category}</h3>
+                    <h3 className="font-bold text-sm tracking-wide" style={{ color: '#ffffff' }}>{group.category}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {group.items.map((skill, j) => (
@@ -1160,6 +1188,9 @@ const App: React.FC = () => {
               ))}
             </motion.div>
           </Section>
+
+          {/* Section divider */}
+          <div className="section-divider" />
 
           {/* ═══════════════════════════════════════════════════════════════════
               CERTIFICATES — POLAROID STYLE
@@ -1191,7 +1222,7 @@ const App: React.FC = () => {
                     <div className="absolute inset-0 project-overlay" />
                     <span
                       className="absolute top-3 left-3 text-xs px-2.5 py-1 rounded-full font-semibold"
-                      style={{ background: 'rgba(180,132,11,0.12)', border: '1px solid rgba(180,132,11,0.28)', color: '#7a5200' }}
+                      style={{ background: 'rgba(34,197,94,0.12)', border: '1px solid rgba(34,197,94,0.3)', color: '#22C55E' }}
                     >
                       {cert.tag}
                     </span>
@@ -1202,14 +1233,14 @@ const App: React.FC = () => {
                     </div>
                   </div>
                   <div className="p-5">
-                    <h3 className="font-bold mb-1" style={{ color: '#111827' }}>{cert.title}</h3>
-                    <p className="text-slate-400 text-sm mb-3 leading-relaxed">{cert.description}</p>
+                    <h3 className="font-bold mb-1" style={{ color: '#ffffff' }}>{cert.title}</h3>
+                    <p className="text-sm mb-3 leading-relaxed" style={{ color: '#64748B' }}>{cert.description}</p>
                     <div className="flex justify-between items-center text-xs">
-                      <span className="font-semibold flex items-center gap-1.5" style={{ color: '#92650a' }}>
+                      <span className="font-semibold flex items-center gap-1.5" style={{ color: '#22C55E' }}>
                         <Award className="w-3.5 h-3.5" />
                         {cert.issuer}
                       </span>
-                      <span className="text-slate-500">{cert.date}</span>
+                      <span style={{ color: '#64748B' }}>{cert.date}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -1217,12 +1248,15 @@ const App: React.FC = () => {
             </motion.div>
           </Section>
 
+          {/* Section divider */}
+          <div className="section-divider" />
+
           {/* ═══════════════════════════════════════════════════════════════════
               CONTACT
           ══════════════════════════════════════════════════════════════════════ */}
           <Section
             id="contact"
-            style={{ background: 'linear-gradient(180deg, rgba(243,240,234,0) 0%, rgba(235,232,224,0.85) 100%)' }}
+            style={{ background: 'linear-gradient(180deg, rgba(8,10,9,0) 0%, rgba(13,15,14,0.9) 100%)' }}
           >
             <div className="max-w-2xl mx-auto">
               <SectionTitle>Get In Touch</SectionTitle>
@@ -1235,27 +1269,27 @@ const App: React.FC = () => {
               >
                 {/* Decorative orbs */}
                 <div
-                  className="absolute -top-10 -right-10 w-48 h-48 rounded-full opacity-30 pointer-events-none"
-                  style={{ background: 'radial-gradient(circle, rgba(244,196,48,0.6), transparent)', filter: 'blur(30px)' }}
+                  className="absolute -top-10 -right-10 w-48 h-48 rounded-full opacity-20 pointer-events-none"
+                  style={{ background: 'radial-gradient(circle, rgba(34,197,94,0.6), transparent)', filter: 'blur(40px)' }}
                 />
                 <div
-                  className="absolute -bottom-10 -left-10 w-48 h-48 rounded-full opacity-25 pointer-events-none"
-                  style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.6), transparent)', filter: 'blur(30px)' }}
+                  className="absolute -bottom-10 -left-10 w-48 h-48 rounded-full opacity-15 pointer-events-none"
+                  style={{ background: 'radial-gradient(circle, rgba(52,211,153,0.5), transparent)', filter: 'blur(40px)' }}
                 />
 
                 <div className="relative z-10">
                   <div
                     className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5"
                     style={{
-                      background: 'rgba(244,196,48,0.12)',
-                      border: '1px solid rgba(244,196,48,0.25)',
-                      boxShadow: '0 0 30px rgba(244,196,48,0.2)',
+                      background: 'rgba(34,197,94,0.1)',
+                      border: '1px solid rgba(34,197,94,0.25)',
+                      boxShadow: '0 0 30px rgba(34,197,94,0.2)',
                     }}
                   >
-                    <Mail className="w-8 h-8" style={{ color: '#92650a' }} />
+                    <Mail className="w-8 h-8" style={{ color: '#22C55E' }} />
                   </div>
-                  <h3 className="text-2xl font-bold mb-3" style={{ color: '#111827' }}>Let's Work Together</h3>
-                  <p className="text-slate-400 leading-relaxed max-w-md mx-auto">
+                  <h3 className="text-2xl font-bold mb-3" style={{ color: '#ffffff' }}>Let's Work Together</h3>
+                  <p className="leading-relaxed max-w-md mx-auto" style={{ color: '#64748B' }}>
                     I'm actively seeking new opportunities in AI, ML, or full-stack development. Whether it's a project, internship, or job — I'd love to hear from you!
                   </p>
                 </div>
@@ -1301,15 +1335,15 @@ const App: React.FC = () => {
           </Section>
 
           {/* ── Footer ── */}
-          <footer className="py-8 px-4 border-t" style={{ borderColor: 'rgba(180,132,11,0.14)' }}>
-            <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500 text-sm">
+          <footer className="py-8 px-4 border-t" style={{ borderColor: 'rgba(34,197,94,0.1)', background: '#080A09' }}>
+            <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm" style={{ color: '#64748B' }}>
               <p>
                 © 2026{' '}
                 <span className="gradient-text font-semibold">Mohammad Rabiul Islam</span>
                 . All rights reserved.
               </p>
               <p className="flex items-center gap-1.5">
-                Built with <span style={{ color: '#b8860b' }}>♥</span> using React &amp; Framer Motion
+                Built with <span style={{ color: '#22C55E' }}>♥</span> using React &amp; Framer Motion
               </p>
             </div>
           </footer>
