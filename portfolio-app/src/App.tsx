@@ -502,10 +502,10 @@ const App: React.FC = () => {
               
               <div className="w-full h-[1px] bg-[#e5e5e5] mb-8 group-hover:bg-[#bfdbfe] transition-colors"></div>
               
-              <div className="space-y-3 text-[#555] font-medium">
-                <p className="hover:text-[#2563eb] transition-colors cursor-pointer">islamrabi93@gmail.com</p>
-                <p className="hover:text-[#2563eb] transition-colors cursor-pointer">github.com/islam-rabiul</p>
-                <p className="hover:text-[#2563eb] transition-colors cursor-pointer">linkedin.com/in/mohammad-rabiul-islam</p>
+              <div className="space-y-3 text-[#555] font-medium flex flex-col">
+                <a href="mailto:islamrabi93@gmail.com" className="hover:text-[#2563eb] transition-colors cursor-pointer">islamrabi93@gmail.com</a>
+                <a href="https://github.com/islam-rabiul" target="_blank" rel="noreferrer" className="hover:text-[#2563eb] transition-colors cursor-pointer">github.com/islam-rabiul</a>
+                <a href="https://linkedin.com/in/mohammad-rabiul-islam" target="_blank" rel="noreferrer" className="hover:text-[#2563eb] transition-colors cursor-pointer">linkedin.com/in/mohammad-rabiul-islam</a>
               </div>
             </motion.div>
           </div>
