@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 
 /* ══════════════════════════════════════════════════════════════════════════════
@@ -12,20 +12,7 @@ const STATS = [
   { value: '5+', label: 'Core Technologies' },
 ];
 
-const EXPERTISE = [
-  {
-    title: 'AI / Automation',
-    desc: 'Automated customer support system using n8n workflows and Gemini AI for sentiment analysis and routing.'
-  },
-  {
-    title: 'Full Stack Development',
-    desc: 'End-to-end web applications with React.js frontend, Node.js/Express backend, and secure database management.'
-  },
-  {
-    title: 'Machine Learning',
-    desc: 'Predictive models achieving high accuracy, applying techniques like Random Forest and dimensionality reduction.'
-  }
-];
+
 
 const EXPERIENCE = [
   {
@@ -83,12 +70,12 @@ const CERTIFICATES = [
 /* ══════════════════════════════════════════════════════════════════════════════
    ANIMATIONS
    ══════════════════════════════════════════════════════════════════════════════ */
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
 };
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
