@@ -166,7 +166,7 @@ const App: React.FC = () => {
               className="w-full max-w-md mx-auto aspect-[4/5] object-cover bg-[#f0f0f0] rounded-2xl overflow-hidden shadow-2xl"
             >
               <img 
-                src="/assets/mainphoto.jpg" 
+                src="/assets/Profileicon.jpeg" 
                 alt="Mohammad Rabiul Islam" 
                 className="w-full h-full object-cover object-center hover:scale-105 transition-all duration-700 cursor-pointer"
               />
@@ -396,7 +396,7 @@ const App: React.FC = () => {
             >
               <div className="w-full aspect-[4/3] bg-[#f0f0f0] mb-8 overflow-hidden rounded-xl">
                 <img 
-                  src="/assets/Profileicon.jpeg" 
+                  src="/assets/mainphoto.jpg" 
                   alt="Mohammad Rabiul Islam" 
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-all duration-500"
                 />
