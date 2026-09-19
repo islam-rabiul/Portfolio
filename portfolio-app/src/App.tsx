@@ -50,6 +50,36 @@ const EXPERIENCE = [
   }
 ];
 
+const PROJECTS = [
+  {
+    title: 'Customer Support AI Agent',
+    desc: 'Automated customer support system using n8n workflows and Gemini AI for sentiment analysis and routing.',
+    tech: ['n8n', 'Gemini AI', 'Node.js', 'MongoDB'],
+    github: 'https://github.com/islam-rabiul',
+    image: '/assets/ai_agent_project.png',
+  },
+  {
+    title: 'Ecommerce Store',
+    desc: 'Full-stack platform with React.js frontend, Node.js/Express backend, and Razorpay.',
+    tech: ['React.js', 'Node.js', 'MongoDB', 'Razorpay'],
+    github: 'https://github.com/islam-rabiul',
+    image: '/assets/ecommerce_project.png',
+  },
+  {
+    title: 'Lung Cancer Detection',
+    desc: 'Machine learning model achieving 97% accuracy using Random Forest.',
+    tech: ['Python', 'Scikit-learn', 'Random Forest'],
+    github: 'https://github.com/islam-rabiul/Machine-Learning-Projects',
+    image: '/assets/lungcancer.jpg',
+  }
+];
+
+const CERTIFICATES = [
+  { title: 'Innovation Camp', issuer: 'AIT Bangkok', date: '2025', image: '/assets/Ait (1).jpeg' },
+  { title: 'AI & Robotics', issuer: 'IIIT Allahabad', date: '2024', image: '/assets/IIITA (1).jpeg' },
+  { title: 'ML with Python', issuer: 'Udemy', date: '2023', image: '/assets/udemy_page-0001 (1).jpg' }
+];
+
 /* ══════════════════════════════════════════════════════════════════════════════
    ANIMATIONS
    ══════════════════════════════════════════════════════════════════════════════ */
@@ -88,7 +118,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const ids = ['home', 'about', 'experience'];
+      const ids = ['home', 'about', 'experience', 'projects', 'certificates'];
       for (const id of [...ids].reverse()) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 200) {
@@ -114,6 +144,7 @@ const App: React.FC = () => {
             <a href="#home" className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}>Home</a>
             <a href="#about" className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}>About</a>
             <a href="#experience" className={`nav-link ${activeSection === 'experience' ? 'active' : ''}`}>Experience</a>
+            <a href="#projects" className={`nav-link ${activeSection === 'projects' || activeSection === 'certificates' ? 'active' : ''}`}>Work</a>
           </nav>
         </div>
       </header>
@@ -359,6 +390,84 @@ const App: React.FC = () => {
               </motion.div>
             ))}
           </motion.div>
+        </Section>
+
+        {/* ── PROJECTS ── */}
+        <Section id="projects">
+          <motion.div 
+            className="mb-20"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+          >
+            <h2 className="heading-section">Selected <span className="text-[#2563eb]">Works</span></h2>
+            <p className="text-xl text-[#555] max-w-2xl font-medium">
+              A collection of projects showcasing my technical expertise. Click the images to view the source code on GitHub.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {PROJECTS.map((project, i) => (
+              <motion.div 
+                key={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={fadeUp}
+                className="group"
+              >
+                <a href={project.github} target="_blank" rel="noreferrer" className="block w-full aspect-video bg-[#f0f0f0] rounded-xl overflow-hidden mb-6 relative shadow-md group-hover:shadow-xl transition-all">
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                     <span className="bg-white text-black px-4 py-2 rounded-full font-bold text-sm flex items-center gap-2">View GitHub <ArrowUpRight className="w-4 h-4"/></span>
+                  </div>
+                </a>
+                <h3 className="text-xl font-bold mb-2 group-hover:text-[#2563eb] transition-colors">{project.title}</h3>
+                <p className="text-[#555] mb-4 text-sm leading-relaxed">{project.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((t, idx) => (
+                    <span key={idx} className="text-xs font-semibold px-3 py-1 bg-[#f0f0f0] rounded-full text-[#555]">{t}</span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </Section>
+
+        {/* ── CERTIFICATES ── */}
+        <Section id="certificates">
+          <motion.div 
+            className="mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+          >
+            <h2 className="heading-section">My <span className="text-[#2563eb]">Certifications</span></h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {CERTIFICATES.map((cert, i) => (
+              <motion.div 
+                key={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={fadeUp}
+                className="group"
+              >
+                <a href={cert.image} target="_blank" rel="noreferrer" className="block w-full aspect-[4/3] bg-[#f0f0f0] rounded-xl overflow-hidden mb-4 border border-[#e5e5e5] shadow-sm hover:shadow-lg hover:border-[#2563eb] transition-all relative">
+                  <img src={cert.image} alt={cert.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute top-3 right-3 w-8 h-8 bg-black/50 backdrop-blur rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ArrowUpRight className="w-4 h-4 text-white" />
+                  </div>
+                </a>
+                <h3 className="font-bold text-lg">{cert.title}</h3>
+                <p className="text-sm text-[#555]">{cert.issuer} · {cert.date}</p>
+              </motion.div>
+            ))}
+          </div>
         </Section>
 
         {/* ── CONTACT ── */}
