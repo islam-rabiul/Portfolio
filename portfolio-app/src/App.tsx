@@ -184,7 +184,7 @@ const App: React.FC = () => {
               variants={fadeUp}
               className="relative"
             >
-              <h2 className="heading-section leading-[0.9]">
+              <h2 className="heading-section leading-[1.1]">
                 Table Of<br /><span className="text-[#2563eb]">Content</span>
               </h2>
               <ArrowUpRight className="w-10 h-10 absolute top-0 right-12 text-[#2563eb]" />
@@ -261,7 +261,7 @@ const App: React.FC = () => {
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
             >
-              <motion.h2 variants={fadeUp} className="heading-section leading-[0.9] mb-4">
+              <motion.h2 variants={fadeUp} className="heading-section leading-[1.1] mb-4">
                 About My<br /><span className="text-[#2563eb]">Unique Value</span>
               </motion.h2>
               
@@ -370,7 +370,7 @@ const App: React.FC = () => {
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
             >
-              <motion.h2 variants={fadeUp} className="heading-hero leading-[0.9] mb-8">
+              <motion.h2 variants={fadeUp} className="heading-hero leading-[1.1] mb-8">
                 Let's<br /><span className="text-[#2563eb]">Connect.</span>
               </motion.h2>
               <motion.p variants={fadeUp} className="text-xl text-[#555] max-w-md mb-12 font-medium">
