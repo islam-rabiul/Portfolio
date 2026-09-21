@@ -170,10 +170,23 @@ const App: React.FC = () => {
       <header className="fixed top-0 w-full z-50 py-6 transition-all duration-300 bg-[var(--bg-primary)]/80 backdrop-blur-md border-b border-[var(--border-light)]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between">
           <a href="#home" className="flex items-center gap-3 text-xl tracking-[0.1em] font-light text-[var(--text-primary)] hover:text-[var(--accent-color)] transition-colors">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--accent-color)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M2 17L12 22L22 17" stroke="var(--accent-color)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M2 12L12 17L22 12" stroke="var(--accent-color)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg width="34" height="34" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform transition-all hover:rotate-180 duration-1000 ease-in-out">
+              <defs>
+                <linearGradient id="cube-grad" x1="0" y1="0" x2="100" y2="100">
+                  <stop offset="0%" stopColor="var(--accent-color)" />
+                  <stop offset="50%" stopColor="#a855f7" />
+                  <stop offset="100%" stopColor="#ec4899" />
+                </linearGradient>
+              </defs>
+              {/* Outer Hexagon */}
+              <path d="M 50 10 L 85 30 L 85 70 L 50 90 L 15 70 L 15 30 Z" stroke="url(#cube-grad)" strokeWidth="6" strokeLinejoin="round" />
+              {/* Inner Y (Cube edges) */}
+              <path d="M 50 50 L 50 10 M 50 50 L 85 70 M 50 50 L 15 70" stroke="url(#cube-grad)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+              {/* Inner Hexagon (Tesseract hyper-edges) */}
+              <path d="M 50 30 L 67 40 L 67 60 L 50 70 L 33 60 L 33 40 Z" stroke="url(#cube-grad)" strokeWidth="3" strokeLinejoin="round" opacity="0.6"/>
+              {/* Connect outer to inner corners */}
+              <path d="M 85 30 L 67 40 M 85 70 L 67 60 M 50 90 L 50 70 M 15 70 L 33 60 M 15 30 L 33 40 M 50 10 L 50 30" stroke="url(#cube-grad)" strokeWidth="3" strokeLinecap="round" opacity="0.6"/>
+              <circle cx="50" cy="50" r="5" fill="url(#cube-grad)" />
             </svg>
             <strong className="font-bold">Rabiul</strong>
           </a>
