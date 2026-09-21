@@ -10,22 +10,43 @@
 
 @layer base {
   :root {
-    --bg-primary:   #ffffff;
-    --bg-secondary: #f9f9f9;
-    --bg-tertiary:  #f0f0f0;
+    /* Midnight Dark (Default) */
+    --bg-primary:   #0B0E14; 
+    --bg-secondary: #121822;
+    --bg-tertiary:  #1A2230;
     
-    --text-primary: #111111;
-    --text-secondary: #555555;
-    --text-tertiary:  #888888;
+    --text-primary: #FFFFFF;
+    --text-secondary: #94A3B8;
+    --text-tertiary:  #64748B;
     
-    --border-light: #e5e5e5;
-    --border-dark:  #111111;
+    --border-light: rgba(255, 255, 255, 0.08);
+    --border-dark:  rgba(255, 255, 255, 0.15);
     
-    --accent-black: #111111;
-    --accent-white: #ffffff;
-    --accent-color: #2563eb; /* Vibrant Blue */
-    --accent-hover: #1d4ed8;
-    --accent-subtle: #eff6ff;
+    --accent-black: #FFFFFF;
+    --accent-white: #0B0E14;
+    --accent-color: #00E5FF; /* Electric Cyan */
+    --accent-hover: #00B8CC;
+    --accent-subtle: rgba(0, 229, 255, 0.1);
+  }
+
+  [data-theme='light'] {
+    /* Clean Light Mode */
+    --bg-primary:   #FFFFFF; 
+    --bg-secondary: #F8FAFC;
+    --bg-tertiary:  #F1F5F9;
+    
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-tertiary:  #94A3B8;
+    
+    --border-light: rgba(0, 0, 0, 0.08);
+    --border-dark:  rgba(0, 0, 0, 0.15);
+    
+    --accent-black: #0F172A;
+    --accent-white: #FFFFFF;
+    --accent-color: #2563EB; /* Deep Royal Blue */
+    --accent-hover: #1D4ED8;
+    --accent-subtle: rgba(37, 99, 235, 0.1);
   }
 
   * { box-sizing: border-box; }
@@ -33,6 +54,15 @@
   html {
     scroll-behavior: smooth;
     background: var(--bg-primary);
+  }
+
+  /* Fix for browser autofill background changing */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active{
+      -webkit-box-shadow: 0 0 0 30px var(--bg-primary) inset !important;
+      -webkit-text-fill-color: var(--text-primary) !important;
   }
 
   body {
@@ -45,26 +75,31 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 800;
-    letter-spacing: -0.04em;
+    font-weight: 300; /* Lighter font weight for premium feel */
+    letter-spacing: -0.02em;
     line-height: 1.1;
     color: var(--text-primary);
   }
 
+  h1 strong, h2 strong, h3 strong {
+    font-weight: 700;
+  }
+
   p {
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--text-secondary);
+    font-weight: 300;
   }
 
   ::selection {
-    background: var(--accent-black);
-    color: var(--accent-white);
+    background: var(--accent-subtle);
+    color: var(--accent-color);
   }
   
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg-primary); }
-  ::-webkit-scrollbar-thumb { background: #d1d1d1; border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: #999; }
+  ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #475569; }
 }
 
 @layer components {
