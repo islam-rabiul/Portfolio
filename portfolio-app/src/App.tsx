@@ -718,6 +718,8 @@ const App: React.FC = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const API_BASE = import.meta.env.VITE_API_URL || '';
+
   const handleCopyEmail = () => {
     navigator.clipboard.writeText('islamrabi93@gmail.com');
     setCopied(true);
@@ -729,7 +731,7 @@ const App: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
     try {
-      const res = await fetch('http://localhost:5000/api/contact', {
+      const res = await fetch(`${API_BASE}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -747,7 +749,7 @@ const App: React.FC = () => {
   const handleDashboardLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:5000/api/dashboard', {
+      const res = await fetch(`${API_BASE}/api/dashboard`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: dashboardEmail, password: dashboardPassword }),
@@ -760,7 +762,7 @@ const App: React.FC = () => {
 
   const handleUpdateQuery = async (id: string, updatedData: any) => {
     try {
-      await fetch(`http://localhost:5000/api/queries/${id}`, {
+      await fetch(`${API_BASE}/api/queries/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedData),
@@ -773,7 +775,7 @@ const App: React.FC = () => {
 
   const handleDeleteQuery = async (id: string) => {
     try {
-      await fetch(`http://localhost:5000/api/queries/${id}`, {
+      await fetch(`${API_BASE}/api/queries/${id}`, {
         method: 'DELETE',
       });
     } catch {}
@@ -784,7 +786,7 @@ const App: React.FC = () => {
     const tempId = Date.now().toString();
     const entry = { ...newQuery, _id: tempId, createdAt: new Date().toISOString() };
     try {
-      const res = await fetch('http://localhost:5000/api/queries', {
+      const res = await fetch(`${API_BASE}/api/queries`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newQuery),
@@ -800,7 +802,7 @@ const App: React.FC = () => {
 
   const handleRefreshQueries = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/queries');
+      const res = await fetch(`${API_BASE}/api/queries`);
       const data = await res.json();
       if (data.success && data.queries) {
         setDashboardQueries(data.queries);
